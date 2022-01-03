@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass src/scss/:dist/css/ --no-source-map --watch",
-    "compile:ejs2html": "ejs-cli -b src/ejs/ \"/**/*.ejs\" -o dist/",
+    "compile:ejs2html": "ejs-cli -b src/ejs/ \"/**/*.ejs\" -e \"_partials/\" -o dist/",
     "watch:ejs2html": "chokidar \"src/ejs/\" -c \"npm run compile:ejs2html\" --initial",
     "watch:ts": "tsc -w",
     "watch:img": "chokidar \"src/image/**/*\" --command \"node imagemin.js\" --initial",
