@@ -1,10 +1,10 @@
-const keepfolder = require('imagemin-keep-folder');
+const imagemin = require('imagemin-keep-folder');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
 const gifsicle = require('imagemin-gifsicle');
 const svgo = require('imagemin-svgo');
 
-keepfolder(['src/image/**/*.{jpg,png,gif,svg}'], {
+imagemin(['src/image/**/*.{jpg,png,gif,svg}'], {
   plugins: [
     mozjpeg({
       quality: 85
@@ -16,6 +16,6 @@ keepfolder(['src/image/**/*.{jpg,png,gif,svg}'], {
     svgo()
   ],
   replaceOutputDir: output => {
-    return output.replace(/img\//, '../dist/image/')
+    return output.replace(/image\//, '../dist/image/')
   }
 });
